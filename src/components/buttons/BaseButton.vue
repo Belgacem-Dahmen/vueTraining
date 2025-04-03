@@ -3,7 +3,7 @@
     class="mainButton"
     :style="{
       backgroundColor: bgColor,
-      color: textColor
+      color: textColor,
     }"
   >
     {{ text }}
