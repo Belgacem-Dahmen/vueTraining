@@ -1,15 +1,21 @@
+<script setup lang="ts">
+import ProjectAssign from '@/components/ProjectAssign.vue';
+import ProjectModal from '@/components/ProjectModal.vue';
+
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main>
+    <ProjectAssign />
+    <ProjectModal title="Create Project"/>
+  </main>
+  
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+main {
+ display: flex;
+ gap: 20px;
+ padding: 50px;
 }
 </style>

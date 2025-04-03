@@ -1,9 +1,24 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import ProjectCard from '@/components/ProjectCard.vue';
+
+
+
 </script>
 
 <template>
+  
   <main>
-    <TheWelcome />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    
   </main>
+   
 </template>
+<style>
+main {
+ display: flex;
+ gap: 20px;
+}
+</style>
