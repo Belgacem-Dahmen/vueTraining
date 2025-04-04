@@ -19,7 +19,7 @@
 <style scoped>
 .project-assign {
   background-color: white;
-  width: 400px;
+  max-width: 400px;
   height: 210px;
   border-radius: 6px;
   padding: 24px;

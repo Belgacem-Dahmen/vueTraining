@@ -4,19 +4,14 @@ import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
 <template>
-  <main>
+ 
     <SearchInput />
     <ProjectCard />
     <ProjectCard />
     <ProjectCard />
     <ProjectCard />
-  </main>
+ 
 </template>
 <style>
-main {
-  display: flex;
-  gap: 20px;
-  align-content: center;
-  justify-content: center;
-}
+
 </style>

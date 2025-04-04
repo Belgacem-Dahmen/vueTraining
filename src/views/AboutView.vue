@@ -5,18 +5,21 @@ import NoteModal from '@/components/modals/NoteModal.vue'
 </script>
 
 <template>
-  <main>
-    <ProjectAssign />
-    <ProjectModal title="Create Project" />
-    <NoteModal />
-  </main>
+    <div class="main">
+        <ProjectAssign />
+        <ProjectModal title="Create Project" />
+        <NoteModal />
+    </div>
+    
+
 </template>
 
-<style>
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 10px;
+<style scoped>
+.main{
+    background: rgb(163, 161, 182);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 </style>

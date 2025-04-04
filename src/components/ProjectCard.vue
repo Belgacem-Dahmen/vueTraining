@@ -6,7 +6,7 @@ import Avatar from './Avatar.vue'
   <div class="project-card">
     <div class="card-header">
       <div class="project-icon-container">
-        <img class="icon" src="../assets/project-icon.png" alt="" />
+        <img class="icon" src="../assets/icons/project-icon.png" alt="" />
       </div>
       <p class="project-status">Ongoing</p>
     </div>
@@ -33,7 +33,7 @@ import Avatar from './Avatar.vue'
       <button class="add-assignee">+</button>
     </div>
     <button class="edit-btn">
-      <img class="edit-icon" src="../assets/edit-icon.png" alt="" />
+      <img class="edit-icon" src="../assets/icons/edit-icon.svg" alt="" />
     </button>
   </div>
 </template>
