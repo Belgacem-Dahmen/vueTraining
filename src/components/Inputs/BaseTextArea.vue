@@ -30,6 +30,10 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+textarea:focus {
+  border-color: blue;
+  outline: none;
+}
 
 label {
   font-weight: bold;

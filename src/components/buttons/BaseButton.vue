@@ -33,5 +33,11 @@ const { text, bgColor = '#5568fd', textColor = '#fff' } = props
   border-radius: 6px;
   border: 1px solid #dadce0;
   cursor: pointer;
-}
+  transition: transform 0.1s ease; /* Smooth transition for transform */
+    }
+
+    /* Apply movement when the button is clicked (active) */
+    .mainButton:active {
+      transform: scale(0.95); /* Slightly shrink the button */
+    }
 </style>

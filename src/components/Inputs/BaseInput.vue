@@ -30,7 +30,10 @@ input {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-
+input:focus {
+  border-color: blue;
+  outline: none; /* Remove the default outline */
+}
 label {
   font-weight: bold;
   margin-bottom: 5px;

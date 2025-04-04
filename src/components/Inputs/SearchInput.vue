@@ -16,4 +16,9 @@ input {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
+input:focus {
+  border-color: blue;
+  outline: none; /* Remove the default outline */
+}
 </style>
