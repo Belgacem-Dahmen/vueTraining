@@ -2,6 +2,7 @@
   <div class="input-container">
     <label :for="props.label">{{ label }}</label>
     <input :name="label" :placeholder="placeholder" :type="type" />
+    <p class="input-error"> {{errorMessage}} </p>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ interface Props {
   label: string
   type?: string
   placeholder?: string
+  errorMessage?: string
 }
 
 // Declare the props and their types
@@ -39,5 +41,11 @@ label {
   margin-bottom: 5px;
   display: block;
   font-size: 12px;
+}
+
+.input-error{
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 </style>

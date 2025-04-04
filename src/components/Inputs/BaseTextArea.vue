@@ -2,6 +2,7 @@
   <div class="input-container">
     <label :for="props.label">{{ label }}</label>
     <textarea type="text" :name="label" :placeholder="placeholder"></textarea>
+    <p class="input-error"> {{errorMessage}} </p>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import { defineProps } from 'vue'
 interface Props {
   label: string
   placeholder?: string
+  errorMessage?:string
 }
 
 // Declare the props and their types
@@ -45,5 +47,11 @@ label {
 textarea::placeholder {
   color: gray;
   font-family: inherit;
+}
+
+.input-error{
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 </style>
