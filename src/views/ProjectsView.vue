@@ -1,19 +1,21 @@
 <script setup lang="ts">
+
+import ProjectCard from '@/components/ProjectCard.vue'
 import ProjectAssign from '@/components/ProjectAssign.vue'
 import ProjectModal from '@/components/modals/ProjectModal.vue'
-import NoteModal from '@/components/modals/NoteModal.vue'
 </script>
 
 <template>
     <div class="main">
-        
-        <NoteModal />
+        <ProjectCard />
+    <ProjectAssign />
+    <ProjectModal title="Create Project" />
+    <ProjectModal title="Edit Project" />
     </div>
     
-
+    
 </template>
-
-<style scoped>
+<style>
 .main{
     background: rgb(163, 161, 182);
     padding: 20px;

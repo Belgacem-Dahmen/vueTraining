@@ -5,13 +5,13 @@
       <!-- Left Sidebar -->
       <div class="sidebar">
         <!-- Sidebar content (you can add links, icons, etc.) -->
-        <AppNavbar :isClosed="isNavbarVisible"/>
+        <AppNavbar />
       </div>
 
       <!-- Content Area -->
       <div class="content">
         <!-- Use Page component to wrap the router view -->
-        <Page :toggleNavbar="toggleNavbar" >
+        <Page>
           <router-view /> 
         </Page>
       </div>
@@ -31,11 +31,7 @@ export default defineComponent({
   },
 });
 
-const isNavbarVisible = ref(true);
 
-const toggleNavbar = () => {
-  isNavbarVisible.value = !isNavbarVisible.value;
-};
 
 
 </script>

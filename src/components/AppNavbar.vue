@@ -1,25 +1,22 @@
 <template>
-    <div class="navbar" :class="{ 'navbar-closed': isClosed, 'navbar-open': !isClosed }">
+    <div class="navbar">
         
         <div class="navbar-container">
-            <img v-if="isClosed" class="closed-logo" src="@/assets/logos/Sigle_blue.png" alt="">
-            <img v-else class="logo" src="@/assets/logos/logo-ipda.png" alt="">
+            <img  class="logo" src="@/assets/logos/logo-ipda.png" alt="">
             
-            <div v-if="isClosed" class="navbar-links_container">
-                <BaseLink  to="/"/>
-                <BaseLink  to="/about"/>
+            <div class="navbar-links_container">
+                <BaseLink text="home" to="/" iconName="edit-icon.svg"/>
+               <BaseLink  text="about" to="/about" iconName="about-icon.svg"/>
+               <BaseLink  text="projects" to="/projects" iconName="project-icon.png" />
             </div>
-            <div v-else class="navbar-links_container">
-               <BaseLink  text="home" to="/"/>
-               <BaseLink  text="about" to="/about"/>
-            </div>
+            
+               
+           
             
         </div>
         <div class="navbar-toggle">
       
-      <ul v-if="!isClosed">
-        <li>Logout</li>
-      </ul>
+      
     </div>
         <div>
             <button>Feeling Lost ? contact us !</button>
@@ -34,13 +31,7 @@
 import BaseLink from './BaseLink.vue';
 import { defineProps } from 'vue';
 
-// Define the props with TypeScript types
-const props = defineProps({
-  // Determines if the sidebar is closed or open
-  isClosed: {
-    type: Boolean,
-    required: true,
-  }})
+
  
 </script>
 
@@ -53,6 +44,7 @@ const props = defineProps({
     flex-grow: 1;
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
     transition: width 0.4s ease; /* Smooth width transition */
+    background-color: white;
     
 }
 .navbar-closed {

@@ -59,6 +59,7 @@ const props = defineProps<Props>()
   flex-direction: column;
   gap: 16px;
   border-radius: 6px;
+ 
 }
 
 .project-modal_header {
