@@ -1,6 +1,6 @@
 <template>
     <div class="navbar">
-        
+      oooooooooooooo
     </div>
 </template>
 
@@ -9,5 +9,7 @@
 </script>
 
 <style scoped>
-    
+.navbar{
+  background: red;
+}
 </style>

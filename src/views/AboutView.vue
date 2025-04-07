@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import ProjectAssign from '@/components/ProjectAssign.vue'
-import ProjectModal from '@/components/modals/ProjectModal.vue'
 import NoteModal from '@/components/modals/NoteModal.vue'
 </script>
 
 <template>
     <div class="main">
-        
+
         <NoteModal />
     </div>
-    
+
 
 </template>
 

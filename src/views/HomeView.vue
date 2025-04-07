@@ -1,12 +1,6 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
- 
-    
- 
+  <p>home</p>
 </template>
-<style>
-
-</style>
+<style></style>
