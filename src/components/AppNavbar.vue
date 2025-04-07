@@ -1,13 +1,15 @@
 <template>
-    <div class="navbar">
+    <div class="navbar" :class="{'closed': !appStore.isOpen}" >
         
-        <div class="navbar-container">
-            <img  class="logo" src="@/assets/logos/logo-ipda.png" alt="">
+        <div class="navbar-container" :class="{'closed': !appStore.isOpen}">
+            <img  v-if="appStore.isOpen" class="logo" src="@/assets/logos/logo-ipda.png" alt="">
+            <img  v-else src="@/assets/logos/Sigle_blue.png" class="small-logo" alt="">
             
-            <div class="navbar-links_container">
-                <BaseLink text="home" to="/" iconName="edit-icon.svg"/>
-               <BaseLink  text="about" to="/about" iconName="about-icon.svg"/>
-               <BaseLink  text="projects" to="/projects" iconName="project-icon.png" />
+            <div class="navbar-links_container" :class="{'closed': !appStore.isOpen}">
+                <BaseLink :text="appStore.isOpen ? 'home' : ''" to="/" iconName="edit-icon.svg"/>
+                <BaseLink :text="appStore.isOpen ? 'about' : ''" to="/about" iconName="about-icon.svg"/>
+                <BaseLink :text="appStore.isOpen ? 'project' : ''" to="/projects" iconName="project-icon.png"/>
+
             </div>
             
                
@@ -30,6 +32,8 @@
 <script setup lang="ts">
 import BaseLink from './BaseLink.vue';
 import { defineProps } from 'vue';
+import { useAppStore } from '@/stores/appStore';
+const appStore = useAppStore();
 
 
  
@@ -47,16 +51,25 @@ import { defineProps } from 'vue';
     background-color: white;
     
 }
-.navbar-closed {
+
+
+.closed {
   max-width: 50px;
   display: flex;
+  gap: 20px;
+  flex: 1;
   flex-direction: column;
   align-items: center;
-  
+  overflow: hidden;
+  padding: 5px;
 }
 
 .logo {
     max-width: 100%;
+}
+
+.small-logo{
+    width: 100%;
 }
 .closed-logo{
     max-width: 50px;

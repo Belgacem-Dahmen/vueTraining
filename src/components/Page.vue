@@ -1,7 +1,7 @@
 <template>
     <div class="page">
       <div class="page-header">
-        <button> <AppIcon iconName="burger-menu.svg"/>  </button>
+        <button @click="appStore.toggleNavbar"> <AppIcon iconName="burger-menu.svg"/>  </button>
          <SearchInput />
       </div>
 
@@ -13,28 +13,15 @@
   
   <script lang="ts" setup>
   import { defineProps } from 'vue';
-    
-  // You can define props or other reactive variables if needed
-  
-  const props = defineProps<{
-    
-    
-  }>();
+  import { useAppStore } from '@/stores/appStore';
+const props = defineProps<{
+ }>();
   import { ref, defineEmits } from 'vue';
   import SearchInput from '@/components/Inputs/SearchInput.vue'
   import AppIcon from '@/components/AppIcon.vue'
 
-// Define emit function to trigger the event
-const emit = defineEmits<{
-  (event: 'toggle-navbar', isClosed: boolean): void;
-}>();
+  const appStore = useAppStore();
 
-const isClosed = ref(true);
-const toggleNavbar = () => {
-  isClosed.value = !isClosed.value;
-  console.log(isClosed.value);
-  emit('toggle-navbar', isClosed.value);
-};
   </script>
   
   <style scoped>
