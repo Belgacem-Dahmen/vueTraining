@@ -46,7 +46,7 @@ const appStore = useAppStore()
   left: 0;
   max-width: 350px;
   background-color: #f4f4f4;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
   height: 100vh; /* Ensure the sidebar takes the full height of the viewport */
   overflow-y: auto; /* Allow sidebar content to scroll if necessary */
 }
@@ -66,7 +66,7 @@ const appStore = useAppStore()
 }
 /* Optional: Style the Navbar */
 .app-navbar {
-  background-color: #333;
+  background-color: #fff;
   color: #fff;
   padding: 10px;
   text-align: center;

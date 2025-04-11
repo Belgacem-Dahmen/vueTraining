@@ -5,13 +5,17 @@
       <img v-else src="@/assets/logos/Sigle_blue.png" class="small-logo" alt="" />
 
       <div class="navbar-links_container" :class="{ closed: !appStore.isOpen }">
-        <BaseLink :text="appStore.isOpen ? 'home' : ''" to="/" iconName="edit-icon.svg" />
-        <BaseLink :text="appStore.isOpen ? 'about' : ''" to="/about" iconName="about-icon.svg" />
+        <BaseLink :text="appStore.isOpen ? 'home' : ''" to="/" iconName="home-icon.svg" />
+        <BaseLink :text="appStore.isOpen ? 'todos' : ''" to="/todos" iconName="home-icon.svg" />
+        <BaseLink :text="appStore.isOpen ? 'demandes' : ''" to="/demandes" iconName="request-icon.svg" />
+        <BaseLink :text="appStore.isOpen ? 'recettes' : ''" to="/recettes" iconName="request-icon.svg" />
+        
         <BaseLink
           :text="appStore.isOpen ? 'projects' : ''"
           to="/projects"
           iconName="project-icon.svg"
         />
+        <BaseLink :text="appStore.isOpen ? 'about' : ''" to="/about" iconName="about-icon.svg" />
       </div>
     </div>
     <div class="navbar-toggle"></div>
@@ -21,6 +25,7 @@
         <p v-if="appStore.isOpen">Feeling Lost ? contact us !</p>
       </button>
 
+      <BaseLink :text="appStore.isOpen ? 'Profile' : ''" to="/profile" iconName="profile-icon.svg" />
       <BaseLink :text="appStore.isOpen ? 'Logout' : ''" to="/about" iconName="logout-icon.svg" />
     </div>
   </div>
@@ -40,7 +45,6 @@ const appStore = useAppStore()
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
   transition: width 0.4s ease; /* Smooth width transition */
   background-color: white;
 }

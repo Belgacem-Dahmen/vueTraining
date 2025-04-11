@@ -9,7 +9,7 @@
 body {
   
   color: var(--color-text);
-  background: rgb(163, 161, 182);
+  background: rgb(252, 252, 253);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -32,3 +32,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+

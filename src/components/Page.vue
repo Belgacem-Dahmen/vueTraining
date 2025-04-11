@@ -29,6 +29,7 @@ const props = defineProps<{
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
+  
 }
 .page-header {
   display: flex;

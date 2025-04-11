@@ -4,7 +4,7 @@ import NoteModal from '@/components/modals/NoteModal.vue'
 
 <template>
     <div class="main">
-
+        <h1>A propos</h1>
         <NoteModal />
     </div>
 
@@ -13,7 +13,6 @@ import NoteModal from '@/components/modals/NoteModal.vue'
 
 <style scoped>
 .main{
-    background: rgb(163, 161, 182);
     padding: 20px;
     display: flex;
     flex-direction: column;

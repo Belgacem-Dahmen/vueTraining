@@ -1,4 +1,5 @@
 <template>
+  <h1>Tableau de board :</h1>
   <button @click="openModal" class="open-button">Show Modal</button>
 
   <RightSideModal v-model="showModal">

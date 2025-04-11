@@ -12,6 +12,7 @@ const openModal = () => (showModal.value = true)
 
 <template>
   <div class="main">
+    <h1>Projets</h1>
     <BaseButton text="Add project" @click="openModal" />
     <RightSideModal v-model="showModal">
       <ProjectModal title="Create Project" />
@@ -23,7 +24,7 @@ const openModal = () => (showModal.value = true)
 </template>
 <style>
 .main {
-  background: rgb(163, 161, 182);
+  
   padding: 20px;
   display: flex;
   flex-direction: column;
