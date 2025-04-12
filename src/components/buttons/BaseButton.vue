@@ -11,8 +11,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-
 // Define props with TypeScript
 interface Props {
   text: string

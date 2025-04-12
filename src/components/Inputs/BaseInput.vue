@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 
 // Define props with TypeScript
 interface Props {
