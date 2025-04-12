@@ -1,73 +1,74 @@
 <template>
-    <main>
-      
-        <div class="recipe-card">
-<img :src="recipe?.image" :alt="recipe?.name" class="recipe-image" />
+  <main>
+    <BaseLoader v-if="isLoading" />
+    <div v-else class="recipe-card">
+      <img :src="recipe?.image" :alt="recipe?.name" class="recipe-image" />
 
-    <div class="recipe-content">
-      <h1 class="recipe-title">{{ recipe?.name }}</h1>
+      <div class="recipe-content">
+        <h1 class="recipe-title">{{ recipe?.name }}</h1>
 
-      <div class="recipe-meta">
-        <span class="badge difficulty">{{ recipe?.difficulty }}</span>
-        <span>{{ recipe?.cuisine }}</span>
-        <span>🍽 {{ recipe?.mealType.join(', ') }}</span>
-        <span>🔥 {{ recipe?.caloriesPerServing }} cal/serving</span>
-        <span>⭐ {{ recipe?.rating }} ({{ recipe?.reviewCount }} reviews)</span>
+        <div class="recipe-meta">
+          <span class="badge difficulty">{{ recipe?.difficulty }}</span>
+          <span>{{ recipe?.cuisine }}</span>
+          <span>🍽 {{ recipe?.mealType.join(', ') }}</span>
+          <span>🔥 {{ recipe?.caloriesPerServing }} cal/serving</span>
+          <span>⭐ {{ recipe?.rating }} ({{ recipe?.reviewCount }} reviews)</span>
+        </div>
+
+        <div class="recipe-time">
+          ⏱ Prep: {{ recipe?.prepTimeMinutes }} mins |
+          Cook: {{ recipe?.cookTimeMinutes }} mins |
+          Servings: {{ recipe?.servings }}
+        </div>
+
+        <div class="tags">
+          <span v-for="tag in recipe?.tags" :key="tag" class="tag">{{ tag }}</span>
+        </div>
+
+        <h3>Ingredients</h3>
+        <ul class="ingredients">
+          <li v-for="(item, i) in recipe?.ingredients" :key="i">{{ item }}</li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol class="instructions">
+          <li v-for="(step, i) in recipe?.instructions" :key="i">{{ step }}</li>
+        </ol>
       </div>
-
-      <div class="recipe-time">
-        ⏱ Prep: {{ recipe?.prepTimeMinutes }} mins |
-        Cook: {{ recipe?.cookTimeMinutes }} mins |
-        Servings: {{ recipe?.servings }}
-      </div>
-
-      <div class="tags">
-        <span v-for="tag in recipe?.tags" :key="tag" class="tag">{{ tag }}</span>
-      </div>
-
-      <h3>Ingredients</h3>
-      <ul class="ingredients">
-        <li v-for="(item, i) in recipe?.ingredients" :key="i">{{ item }}</li>
-      </ul>
-
-      <h3>Instructions</h3>
-      <ol class="instructions">
-        <li v-for="(step, i) in recipe?.instructions" :key="i">{{ step }}</li>
-      </ol>
     </div>
-  </div>
-  
-    </main>
-    
-    </template>
-    <script setup lang="ts">
-    import { onMounted } from 'vue'
-    import { useRecipesStore } from '@/stores/RecipesStore'
-    import { useRoute } from 'vue-router'
-    import { storeToRefs } from 'pinia'
 
-    const route = useRoute()
-    const recipesStore = useRecipesStore() 
-    const { recipe } = storeToRefs(recipesStore)
+  </main>
 
-    onMounted ( async () => {
-        const id = route.params.id as string
-        console.log(id);
-        
-        await recipesStore.getRecipe(id)
-    })
-    </script>
-  
-    <style scoped>
-    .main {
-    
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
+</template>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { useRecipesStore } from '@/stores/RecipesStore'
+import BaseLoader from '@/components/BaseLoader.vue'
+import { useRoute } from 'vue-router'
+import { storeToRefs } from 'pinia'
+const isLoading = ref(true);
+const route = useRoute()
+const recipesStore = useRecipesStore()
+const { recipe } = storeToRefs(recipesStore)
 
-  .recipe-card {
+onMounted(async () => {
+  const id = route.params.id as string
+  console.log(id);
+  await recipesStore.getRecipe(id)
+  isLoading.value = false
+})
+</script>
+
+<style scoped>
+.main {
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.recipe-card {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -140,4 +141,4 @@
   color: #444;
   font-size: 15px;
 }
-  </style>
+</style>
