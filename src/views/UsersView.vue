@@ -1,13 +1,15 @@
 <script setup lang="ts">
 
-import ProjectModal from '@/components/modals/ProjectModal.vue'
-import BaseButton from '@/components/buttons/BaseButton.vue'
-import RightSideModal from '@/components/modals/SlideModal.vue'
-import { onMounted, ref } from 'vue'
-import { useUsersStore } from '@/stores/usersStore'
-import { storeToRefs } from 'pinia'
-import BaseLoader from '@/components/BaseLoader.vue'
-import AppTable from '@/components/AppTable.vue'
+import ProjectModal from '@/components/modals/ProjectModal.vue';
+import BaseButton from '@/components/buttons/BaseButton.vue';
+import RightSideModal from '@/components/modals/SlideModal.vue';
+import { onMounted, ref } from 'vue';
+import { useUsersStore } from '@/stores/usersStore';
+import { storeToRefs } from 'pinia';
+import BaseLoader from '@/components/BaseLoader.vue';
+import AppTable from '@/components/AppTable.vue';
+import PopupModal from '@/components/modals/PopupModal.vue';
+
 const usersStore = useUsersStore()
 
 const { users, token, user } = storeToRefs(useUsersStore())
@@ -15,8 +17,10 @@ const { users, token, user } = storeToRefs(useUsersStore())
 const isLoading = ref(true)
 const showAddModal = ref(false)
 const showEditModal = ref(false)
+const showDeleteModal = ref(false)
 const openAddModal = () => (showAddModal.value = true)
 const openEditModal = () => (showEditModal.value = true)
+const openDeleteModal = () => (showDeleteModal.value = true)
 const userColumns = ref([
   { key: 'id', label: 'ID' },
   { key: 'username', label: 'Username' },
@@ -28,10 +32,7 @@ onMounted(async () => {
   await usersStore.fetchUsers()
   isLoading.value = false
 })
-const deleteUser = (row: any) => {
-  console.log('Delete user', row);
-  // You could also call usersStore.deleteUser(row.id)
-};
+
 </script>
 
 <template>
@@ -47,7 +48,7 @@ const deleteUser = (row: any) => {
 
       <template #actions="{ row }">
         <BaseButton text="edit" @click="openEditModal">Edit</BaseButton>
-        <BaseButton text="delete" @click="deleteUser(row)">Delete</BaseButton>
+        <BaseButton text="delete" @click="openDeleteModal">Delete</BaseButton>
       </template>
 
     </AppTable>
@@ -55,6 +56,11 @@ const deleteUser = (row: any) => {
   <RightSideModal v-model="showEditModal">
     <ProjectModal title="edit User" />
   </RightSideModal>
+
+  <PopupModal v-model="showDeleteModal" title="Do you want to delete this user ?">
+    <BaseButton text="Cancel" bgColor="#fff" textColor="black" />
+    <BaseButton text="Delete" bgColor="#F64C4C" />
+  </PopupModal>
 </template>
 <style>
 .main {
