@@ -3,7 +3,7 @@ import BaseButton from '../buttons/BaseButton.vue'
 import CloseButton from '../buttons/CloseButton.vue'
 import BaseInput from '../Inputs/BaseInput.vue'
 import BaseTextArea from '../Inputs/BaseTextArea.vue'
-import { defineProps } from 'vue'
+
 
 // Define props with TypeScript
 interface Props {

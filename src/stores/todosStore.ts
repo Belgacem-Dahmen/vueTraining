@@ -19,7 +19,7 @@ export const useTodosStore = defineStore('todosStore', () => {
     }
   }
 
-  const getTodo = async (id: number): Promise<Todo> => {
+  const getTodo = async (id: number) => {
     try {
       const res = await fetch(`https://dummyjson.com/todos/${id}`)
       const data = await res.json()

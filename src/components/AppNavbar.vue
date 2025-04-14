@@ -8,6 +8,7 @@
         <BaseLink :text="appStore.isOpen ? 'home' : ''" to="/" iconName="home-icon.svg" />
         <BaseLink :text="appStore.isOpen ? 'todos' : ''" to="/todos" iconName="home-icon.svg" />
         <BaseLink :text="appStore.isOpen ? 'demandes' : ''" to="/demandes" iconName="request-icon.svg" />
+        <BaseLink :text="appStore.isOpen ? 'users' : ''" to="/users" iconName="request-icon.svg" />
         <BaseLink :text="appStore.isOpen ? 'recettes' : ''" to="/recettes" iconName="request-icon.svg" />
         
         <BaseLink
