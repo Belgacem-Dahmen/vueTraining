@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+import {  defineEmits } from 'vue'
 
 const props = defineProps<{
   modelValue: boolean
@@ -29,7 +29,6 @@ const close = () => emit('update:modelValue', false)
 </script>
 
 <style scoped>
-/* Styles same as before */
 .overlay {
   position: fixed;
   inset: 0;
